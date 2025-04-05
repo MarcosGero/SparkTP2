@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>     <TITLE>PERSONAS</TITLE>    </HEAD>
+<BODY>
+    <form action='/getHijos' method='get'>
+        <div class="form-group">
+            <label for="nombre">Un nombre</label>
+            <input id="nombre" name="nombre" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Nombre de la Persona que busca los hijos</button>
+    </form>
+      <B>Cantidad de hijos: $hijos.size()</B>
+      <BR/>  <BR/>
+      Ellos son:  #set( $cuenta = 1 )  
+      <TABLE>
+         #foreach( $p in $hijos )          
+            <TR>
+                <TD>$cuenta         </TD>
+                <TD>$p.getNombre() $p.getApellido() </TD>
+            </TR>
+          #set( $cuenta = $cuenta + 1 )
+        #end
+        </TABLE>      <BR/>      <I>Todos los hijos de $nombre</I>
+</BODY>  
+</HTML>

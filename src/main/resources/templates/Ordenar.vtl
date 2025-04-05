@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Ordenar o Desordenar Números</title>
+</head>
+<body>
+<h1>Ingrese 6 números</h1>
+    #if($numbers.errorMessage)
+    <p style="color: red;">$numbers.errorMessage</p>
+    #end
+<form method="get" action="">
+    #set($range = [0..5])
+    #foreach($i in $range)
+        <div class="input-row">
+            <label for="number$i">Número $i:</label>
+            <input type="text" id="number$i" name="number" value="$numbers.numbers[$i]" />
+        </div>
+    #end
+    <button type="submit" name="action" value="sort">Ordenar</button>
+    <button type="submit" name="action" value="shuffle">Desordenar</button>
+    #if($numbers.rearrangedNumbers.size() > 0)
+    <div>
+        <h5>Cantidad de números: $numbers.rearrangedNumbers.size()</h5>
+        <h5>Resultado:</h5>
+        <ul>
+            #foreach($num in $numbers.rearrangedNumbers)
+                <li>$num</li>
+            #end
+        </ul>
+    </div>
+    #end
+</form>
+</body>
+</html>

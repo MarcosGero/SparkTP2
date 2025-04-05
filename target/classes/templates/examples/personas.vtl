@@ -1,0 +1,33 @@
+<HTML>    <HEAD>
+      <TITLE>Productos</TITLE>    </HEAD>
+    <BODY>
+<CENTER>
+      <B>Cantidad: $personas.size()</B>
+      <BR/>  <BR/>
+      Ellos son:  #set( $cuenta = 1 )  
+      <TABLE>
+         #foreach( $p in $personas )          
+            <TR>
+                <TD> $cuenta </TD>
+                <TD> $p.nombre $p.apellido </TD>
+            </TR>
+          #set( $cuenta = $cuenta + 1 )
+        #end
+      </TABLE
+      </CENTER>  
+
+      <CENTER>
+      <B>  Cantidad de Personas: $personas.size()</B>
+      <BR/>  <BR/>
+      Ellas son:  #set( $cuenta = 1 )  
+      <TABLE>
+         #foreach( $p in $personas )          
+            <TR>
+                <TD>$cuenta         </TD>
+                <TD>$p.getNombre() $p.getApellido() </TD>
+            </TR>
+          #set( $cuenta = $cuenta + 1 )
+        #end
+      </TABLE>      <BR/>      <I>Todas las personas!</I>
+      </CENTER>    </BODY>  </HTML>
+
