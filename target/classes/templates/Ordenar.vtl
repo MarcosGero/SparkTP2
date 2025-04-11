@@ -7,7 +7,7 @@
     #if($numbers.errorMessage)
     <p style="color: red;">$numbers.errorMessage</p>
     #end
-<form method="get" action="">
+<form method='get'>
     #set($range = [0..5])
     #foreach($i in $range)
         <div class="input-row">
@@ -15,8 +15,8 @@
             <input type="text" id="number$i" name="number" value="$numbers.numbers[$i]" />
         </div>
     #end
-    <button type="submit" name="action" value="sort">Ordenar</button>
-    <button type="submit" name="action" value="shuffle">Desordenar</button>
+    <button type="submit" onclick="this.form.action='/ej1/ordenar';">Ordenar</button>
+    <button type="submit" onclick="this.form.action='/ej1/desordenar';">Desordenar</button>
     #if($numbers.rearrangedNumbers.size() > 0)
     <div>
         <h5>Cantidad de números: $numbers.rearrangedNumbers.size()</h5>
