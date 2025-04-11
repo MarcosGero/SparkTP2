@@ -7,7 +7,7 @@ import java.util.List;
 public class Numbers {
     private List<String> numbers;
     private List<String> rearrangedNumbers;
-    private String errorMessage;
+
 
     public Numbers() {
         numbers = new ArrayList<>();
@@ -32,11 +32,4 @@ public class Numbers {
         this.rearrangedNumbers = rearrangedNumbers;
     }
 
-    public String getErrorMessage() {
-        return errorMessage;
-    }
-
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
-    }
 }

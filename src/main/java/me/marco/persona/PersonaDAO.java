@@ -14,7 +14,6 @@ public class PersonaDAO {
     
     public void init() {
        personas = new ArrayList<Persona>();
-        
         Persona pJuan = new Persona("JUAN", "PEREZ");
         
         personas.add(pJuan);
