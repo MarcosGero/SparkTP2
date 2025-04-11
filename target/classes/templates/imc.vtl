@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Índice de Masa Corporal</title>
+</head>
+<body>
+<h1>Índice de Masa Corporal</h1>
+<form method='get'>
+    <div class="input-row">
+        <label for="peso">Peso (kg):</label>
+        <input type="text" id="peso" name="peso" value="$imc.peso" />
+    </div>
+    <div class="input-row">
+        <label for="altura">Altura (m):</label>
+        <input type="text" id="altura" name="altura" value="$imc.altura" />
+    </div>
+    <button type="submit">Calcular IMC</button>
+    #if($imc.imc)
+    <div>
+        <h5>Índice de Masa Corporal: $imc.imc</h5>
+        #if($imc.resultado)
+            <h5>Estado: $imc.resultado</h5>
+        #end
+    </div>
+    #end
+</body>
+</html>
