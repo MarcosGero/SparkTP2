@@ -1,0 +1,48 @@
+<html>
+<head>
+    <style>
+        .centered {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .centered ol {
+            display: inline-block;
+            text-align: left;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinea los botones a la izquierda */
+            gap: 5px; /* Espacio entre botones */
+            margin: 10px 0; /* Margen arriba y abajo */
+        }
+    </style>
+</head>
+<body>
+<form method='get'>
+<div>
+    <label>Un nombre</label>
+    <input type="text" name="nombre" value="$nombre" />
+</div>
+<div class="button-container">
+    <button type="submit" onclick="this.form.action='/ej3/hijos';">Hijos</button>
+    <button type="submit" onclick="this.form.action='/ej3/hermanos';">Hermanos</button>
+    <button type="submit" onclick="this.form.action='/ej3/nietos';">Nietos</button>
+    <button type="submit" onclick="this.form.action='/ej3/padres';">Padres</button>
+    <button type="submit" onclick="this.form.action='/ej3/personas';">Personas</button>
+    <button type="submit" onclick="this.form.action='/ej3/sobrinos';">Sobrinos</button>
+    <button type="submit" onclick="this.form.action='/ej3/tios';">Tios</button>
+</div>
+</form>
+</body>
+<div class="centered">
+    <h4>Cantidad: $personas.size()</h4>
+    <p>Ellos son:</p>
+    <ol>
+        #foreach($persona in $personas)
+            <li>$persona.getNombre()</li>
+        #end
+    </ol>
+</div>
+</body>
+</html>

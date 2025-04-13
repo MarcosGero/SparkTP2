@@ -25,11 +25,11 @@ public class PersonaControlador {
    
     public static Route 
         getPersonas = (Request req, Response res) -> {
-              //PersonaDAO pDAO = new PersonaDAO();
               List<Persona> p = pDAO.getPersonas(); 
            
             HashMap model = new HashMap();
             model.put("personas", p);
+            model.put("nombre", "");
             model.put("template", "templates/examples/personas.vtl");
             return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/layout.vtl")); };
      
@@ -59,7 +59,7 @@ public class PersonaControlador {
             model.put("nombre", nbre);
             model.put("template", "templates/examples/nietos.vtl");
             return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/layout.vtl")); };
-            
+
 
         
     

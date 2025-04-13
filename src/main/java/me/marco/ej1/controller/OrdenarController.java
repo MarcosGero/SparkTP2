@@ -52,7 +52,7 @@ public class OrdenarController {
 
                 model.put("numbers", numbersModel);
 
-                return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/layout.vtl"));
+                return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/ej1/layout.vtl"));
         };
     public static Route
         desordenarNumeros = (Request request, Response res) -> {

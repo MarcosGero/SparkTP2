@@ -1,0 +1,43 @@
+<html>
+<body>
+<h1>Convertidor de Temperatura, peso y longitud</h1>
+<form method="get">
+    <div class="form-group">
+        <label>Tipo de conversión:</label>
+        <select name="tipo" id="tipoSelector" required>
+            <option value="">Seleccione...</option>
+            <option value="temperatura" #if($tipo == 'temperatura')selected#end>Temperatura</option>
+            <option value="longitud" #if($tipo == 'longitud')selected#end>Longitud</option>
+            <option value="peso" #if($tipo == 'peso')selected#end>Peso</option>
+        </select>
+    </div>
+    <button type="submit" onclick="this.form.action='/ej6';">Mostrar opciones</button>
+#if($convertidor.getError())
+    <h2 style="color: red;">Error: $convertidor.getError()</h2>
+#elseif ($convertidor.getOptions())
+        <br />
+        <label>Unidades para ($tipo)</label>
+        <select name="unidadOrigen">
+            #foreach($option in $convertidor.getOptions())
+                <option value="$option" #if($option.equals($unidadOrigen))selected#end>$option</option>
+            #end
+        </select>
+        <div name="input-row">
+            <label for="value">Valor:</label>
+            <input type="text" id="value" name="valor" value="#if($convertidor.getValor())$convertidor.getValor()#end" />
+        </div>
+        <button type="submit" onclick="this.form.action='/ej6/calcular';">Calcular</button>
+#end
+#if($convertidor.getResultados())
+    <div>
+        <h5>Resultado:</h5>
+        <ul>
+            #foreach($mapEntry  in $convertidor.getResultados().entrySet())
+                <li>$mapEntry.key : $mapEntry.value</li>
+            #end
+        </ul>
+    </div>
+#end
+</form>
+</body>
+</html>

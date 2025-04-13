@@ -18,9 +18,9 @@ public class IMCController {
                 IMC response = new IMC(peso, altura);
 
                 HashMap model = new HashMap();
-                model.put("template", "templates/imc.vtl");
+                model.put("template", "templates/ej2/imc.vtl");
                 model.put("imc", response);
 
-                return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/layout.vtl"));
+                return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/ej2/layout.vtl"));
             };
 }

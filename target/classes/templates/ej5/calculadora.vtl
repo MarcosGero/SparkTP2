@@ -1,0 +1,19 @@
+<html>
+<body>
+<h1>Calculadora</h1>
+<form method="get">
+    <input type="text" name="num1" placeholder="Número 1">
+    <input type="text" name="num2" placeholder="Número 2">
+    <button type="submit" onclick="this.form.action='/ej5/sumar';">Sumar</button>
+    <button type="submit" onclick="this.form.action='/ej5/restar';">Restar</button>
+    <button type="submit" onclick="this.form.action='/ej5/multiplicar';">Multiplicar</button>
+    <button type="submit" onclick="this.form.action='/ej5/dividir';">Dividir</button>
+</form>
+#if($calculadora.getError())
+    <h2 style="color: red;">Error: $calculadora.getError()</h2>
+#end
+#if($calculadora.getResultado())
+    <h2>Resultado: $calculadora.getResultado()</h2>
+#end
+</body>
+</html>

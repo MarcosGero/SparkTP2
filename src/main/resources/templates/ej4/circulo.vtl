@@ -1,0 +1,30 @@
+<html>
+<body>
+<h1>Ingrese el radio del círculo</h1>
+<form method='get'>
+    <div>
+        <label for="radio">Radio:</label>
+        <input type="text" id="radio" name="radio"/>
+    </div>
+    <button type="submit" onclick="
+            if(document.getElementById('radio').value.trim() === '') {
+                this.form.action='/ej4';
+            } else {
+                this.form.action='/ej4/area';
+            }">Calcular Área</button>
+
+    <button type="submit" onclick="
+            if(document.getElementById('radio').value.trim() === '') {
+                this.form.action='/ej4';
+            } else {
+                this.form.action='/ej4/perimetro';
+            }">Calcular Perímetro</button>
+</form>
+    #if($circulo.getResultado())
+    <div>
+        <h3>Resultado:</h3>
+        <h5>$circulo.getResultado()</h5>
+    </div>
+    #end
+</body>
+</html>
