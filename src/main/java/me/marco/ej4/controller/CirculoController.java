@@ -14,7 +14,7 @@ public class CirculoController {
                 CircleView = (request, response) -> {
             HashMap<String, Object> model = new HashMap<>();
             model.put("template", "templates/ej4/circulo.vtl");
-
+            model.put("radio", "");
             return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/ej4/layout.vtl"));
         };
         public static Route
@@ -26,6 +26,8 @@ public class CirculoController {
             Circulo circulo = new Circulo(radio);
             circulo.calcularArea();
             model.put("circulo", circulo);
+
+            model.put("radio", radio);
             return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/ej4/layout.vtl"));
         };
         public static Route
@@ -37,6 +39,8 @@ public class CirculoController {
             Circulo circulo = new Circulo(radio);
             circulo.calcularPerimetro();
             model.put("circulo", circulo);
+
+            model.put("radio", radio);
             return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/ej4/layout.vtl"));
         };
 }

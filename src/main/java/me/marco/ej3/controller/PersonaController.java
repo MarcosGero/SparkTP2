@@ -24,6 +24,7 @@ public class PersonaController {
 
             List<Persona> personas = PersonaDAO.listarPersonas();
             model.put("personas", personas);
+            model.put("nombre","");
             return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/ej3/layout.vtl"));
         };
         public static Route

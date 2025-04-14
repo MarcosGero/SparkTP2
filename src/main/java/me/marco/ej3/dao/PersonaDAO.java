@@ -50,7 +50,7 @@ public class PersonaDAO {
 
     public static List<Persona> getPadres(String nombre) {
         Persona persona = personas.get(nombre);
-        if (persona == null || persona.getHijos() == null) return Collections.emptyList();
+        if (persona == null) return Collections.emptyList();
 
         return personas.values().stream()
                 .filter(p -> p.getHijos() != null && p.getHijos().contains(persona))
