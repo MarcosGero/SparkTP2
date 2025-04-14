@@ -1,0 +1,40 @@
+<h1>Sistema de Puntos Grido</h1>
+
+<form action="/ej7/grido/verificar" method="get">
+    <div>
+        <label>Tus puntos actuales:</label>
+        <input type="number" name="puntos" required
+               value="$!{puntosIngresados}">
+        <button type="submit">Verificar canjes disponibles</button>
+    </div>
+</form>
+
+#if($error)
+<div style="color: red;">$error</div>
+#end
+
+<h2>Lista de Canjes</h2>
+<table>
+    <tr>
+        <th>Artículo</th>
+        <th>Puntos Requeridos</th>
+        <th>Precio</th>
+        <th>Descuento</th>
+        <th>Disponible</th>
+    </tr>
+    #foreach($articulo in $articulos)
+        <tr>
+            <td>$articulo.getNombre()</td>
+            <td>$articulo.getPuntosRequeridos()</td>
+            <td>$articulo.getPrecio()</td>
+            <td>$articulo.getDescuento()</td>
+            <td>
+                #if($articulosDisponibles && $articulosDisponibles.contains($articulo))
+                    ✅
+                #else
+                    ❌
+                #end
+            </td>
+        </tr>
+    #end
+</table>

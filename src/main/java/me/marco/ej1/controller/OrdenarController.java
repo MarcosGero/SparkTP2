@@ -19,7 +19,7 @@ public class OrdenarController {
                 List<String> inputNumbers = new ArrayList<>();
                 HashMap model = new HashMap();
 
-                model.put("template", "templates/ordenar.vtl");
+                model.put("template", "templates/ej1/ordenar.vtl");
 
                 if (numberParams != null) {
                     inputNumbers.addAll(Arrays.asList(numberParams));
@@ -63,7 +63,7 @@ public class OrdenarController {
             List<String> inputNumbers = new ArrayList<>();
             HashMap model = new HashMap();
 
-            model.put("template", "templates/ordenar.vtl");
+            model.put("template", "templates/ej1/ordenar.vtl");
 
             if (numberParams != null) {
                 inputNumbers.addAll(Arrays.asList(numberParams));
