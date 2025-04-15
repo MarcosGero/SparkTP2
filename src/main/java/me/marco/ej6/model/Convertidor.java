@@ -127,7 +127,6 @@ public class Convertidor {
         }
         return resultados;
     }
-    //Methods for getting options for the conversion
     public List<String> getOptions(){
         return switch (tipo.toLowerCase()) {
             case "temperatura" -> List.of("celsius", "fahrenheit", "kelvin");

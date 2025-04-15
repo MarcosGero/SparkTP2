@@ -2,7 +2,6 @@ package me.marco.ej5.controller;
 
 import me.marco.ej5.model.Calculadora;
 import spark.ModelAndView;
-import spark.Response;
 import spark.Route;
 import spark.template.velocity.VelocityTemplateEngine;
 
